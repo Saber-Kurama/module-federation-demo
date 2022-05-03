@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
+// const ModuleFederationPlugin = require('webpack').container.ModuleFederationPlugin;
 
 const mode = process.env.NODE_ENV || 'production';
 
@@ -26,6 +27,22 @@ module.exports = {
   },
 
   plugins: [
+    // New
+    new ModuleFederationPlugin({
+      name: 'application_b',
+      library: { type: 'var', name: 'application_b' },
+      filename: 'remoteEntry.js',
+      exposes: {
+        './SayHelloFromB': './src/app',
+      },
+      // remotes: {
+      //   'application_a': 'application_a@http://localhost:3001/remoteEntry.js',
+      // },
+      remotes: {
+        'application_a': 'application_a',
+      },
+      shared: ['react', 'react-dom'],
+    }),
     new HtmlWebpackPlugin({
       template: './public/index.html',
     }),
