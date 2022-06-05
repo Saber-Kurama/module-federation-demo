@@ -32,6 +32,8 @@
     "tailwindcss": "^2.0.2"
   },
   "dependencies": {
-    "vue": "^3.2.19"
+    "vue": "^3.2.19",
+    "vuex": "^4.0.2",
+    "vue-router": "^4.0.15"
   }
 }
