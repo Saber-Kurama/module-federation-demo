@@ -1,7 +1,10 @@
 <script setup>
-import Header from 'remote/Header'
-import { computed, getCurrentInstance } from 'vue';
+import { computed, defineAsyncComponent, getCurrentInstance } from 'vue';
 import { useStore } from 'vuex'
+
+// import Header from 'remote/Header'
+const Header = defineAsyncComponent(() => import('remote/Header'));
+
 
 const store = useStore()
 // const xx = getCurrentInstance()
