@@ -51,7 +51,8 @@ module.exports = {
       remotes: {},
       exposes: {
         "./Header": "./src/Header.vue",
-        "./About": "./src/About.vue"
+        "./About": "./src/About.vue",
+        "./replaceHeader": "./src/replaceHeader.js"
       },
       shared: require("./package.json").dependencies,
     }),
