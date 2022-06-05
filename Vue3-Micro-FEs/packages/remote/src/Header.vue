@@ -20,5 +20,12 @@ const count = computed(() => {
       <router-link to="/about" class="mr-3">About</router-link>
     </div>
     <div>{{ count }}</div>
+    <div class="saber-red">红色文字</div>
   </div>
 </template>
+
+<style >
+.saber-red {
+  color: red;
+}
+</style>
